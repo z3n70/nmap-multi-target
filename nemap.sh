@@ -4,6 +4,6 @@
 printf "Masukan Target ip-target.txt : "
 read ip  
    while read p; do
-     nmap -v "$p"
+     nmap -sV -vv -p- --script vuln -oX result.xml "$p"
    done <$ip
 #done
